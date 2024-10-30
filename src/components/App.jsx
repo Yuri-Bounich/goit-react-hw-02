@@ -1,32 +1,31 @@
-import FriendList from './FriendList/FriendList';
-import Profile from './Profile/Profile';
-import userData from '../assets/userData.json';
-import friends from '../assets/friends.json';
-import transactions from '../assets/transactions.json';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
+import Description from './Description/Description';
+import Options from './Options/Options';
+// import userData from '../assets/userData.json';
+// import friends from '../assets/friends.json';
+// import transactions from '../assets/transactions.json';
+import Feedback from './Feedback/Feedback';
 import '../index.css';
+// import { useState, useEffect } from 'react';
 
 const App = () => {
+  // const [values, setValues] = useState({
+  //   good: 0,
+  //   neutral: 0,
+  //   bad: 0,
+  // });
+
+  const userResponse = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
   return (
     <div>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
+      <Description />
+      <Options />
+      <Feedback response={userResponse} />
     </div>
   );
 };
 
 export default App;
-
-// Щоб перетворити цей масив об'єктів у JSON, використовуйте:
-// в javascript
-// const jsonData = JSON.stringify(users, null, 2);
-// console.log(jsonData);
-// де users - назва масиву
