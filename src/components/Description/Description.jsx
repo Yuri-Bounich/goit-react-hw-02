@@ -1,13 +1,10 @@
 import s from './Description.module.css';
 
-const Description = () => {
+const Description = ({ title, text }) => {
   return (
     <div className={s.cotainer}>
-      <h2 className={s.title}>Sip Happens Café</h2>
-      <p className={s.text}>
-        Please leave your feedback about our service by selecting one of the
-        options below.
-      </p>
+      <h2 className={s.title}>{title}</h2>
+      <p className={s.text}>{text}</p>
     </div>
   );
 };
